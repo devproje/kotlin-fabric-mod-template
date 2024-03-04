@@ -1,12 +1,12 @@
 {
     "schemaVersion": 1,
-    "id": "modid",
+    "id": "example_mod",
     "version": "${version}",
 
     "name": "Example Mod",
     "description": "This is an example description! Tell everyone what your mod is about!",
     "authors": [
-        "Me!"
+        "Project_IO"
     ],
     "contact": {
         "homepage": "https://github.com/devproje",
@@ -15,7 +15,6 @@
 
     "license": "MIT",
     "icon": "assets/modid/icon.png",
-
     "environment": "*",
     "entrypoints": {
         "main": [

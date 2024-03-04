@@ -1,7 +1,8 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    kotlin("jvm") version "1.9.21"
+    id("com.github.johnrengelman.shadow") version "8.1.1"
+    kotlin("jvm") version "1.9.22"
     id("fabric-loom")
     `maven-publish`
     java
@@ -18,6 +19,8 @@ val fabric_version: String by project
 val fabric_kotlin_version: String by project
 
 repositories {
+    mavenLocal()
+    mavenCentral()
 }
 
 dependencies {
@@ -41,6 +44,12 @@ tasks {
 
     jar {
         from("LICENSE")
+    }
+
+    shadowJar {
+        archiveBaseName.set(rootProject.name)
+        archiveClassifier.set("")
+        archiveVersion.set("")
     }
 
     publishing {
